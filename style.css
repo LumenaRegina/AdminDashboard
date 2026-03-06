@@ -1,0 +1,25 @@
+body {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: auto 1fr;
+    min-height: 100svh;
+    margin: 0;
+}
+
+header{
+    background-color: crimson;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+aside{
+    background-color: darkturquoise;
+    grid-column: 1;
+    grid-row: 1 / -1;
+}
+
+main{
+    background-color: gray;
+    grid-column: 2;
+    grid-row: 2;
+}
