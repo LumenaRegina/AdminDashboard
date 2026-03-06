@@ -1,25 +1,144 @@
 body {
+  display: grid;
+  grid-template-columns: clamp(250px, 20vw, 350px) 1fr;
+  grid-template-rows: auto 1fr;
+  min-height: 100svh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: 1rem "Roboto";
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  display: contents;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: white;
+  color: black;
+  grid-column: 2;
+  grid-row: 1;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: 1fr;
+  padding: .25rem 2rem;
+  font-weight: bold;
+}
+
+aside {
+  background-color: rgb(25, 146, 212);
+  color: white;
+  font-size: 1.25em;
+  font-weight: bold;
+  grid-column: 1;
+  grid-row: 1 / -1;
+  padding: 1rem;
+}
+
+main {
+  background-color: gray;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+svg {
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+
+.logo>*>svg{
+    width: 48px;
+    height: 48px;
+}
+use {
+  margin: auto;
+}
+
+li > a,
+.logo {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  column-gap: 1rem;
+}
+aside > * {
+  margin-bottom: 3rem;
+}
+
+.logo {
+  font-size: 1.5em;
+}
+
+button{
+    border: none;
+    background-color: transparent;
+}
+
+
+.topRow{
     display: grid;
-    grid-template-columns: min-content 1fr;
-    grid-template-rows: auto 1fr;
-    min-height: 100svh;
+    grid-template-columns:min-content 1fr repeat(3,min-content);
+    align-items: center;
+    column-gap: 1rem;
+    font-size: 1.5rem;
+}
+
+form{
+    display: contents;
+}
+
+.topRow>.profilePic{
+    height: 64px;
+}
+
+.topRow>.profileName{
+    width: max-content;
+}
+.topRow>*>input{
+    border-radius: 1em;
+    border-width: 1px;
+    background-color: rgb(245, 245, 245);
+    padding: .4rem;
+}
+
+.bottomRow{
+    display: grid;
+    grid-template-columns:min-content 1fr repeat(3,min-content);
+    align-items: center;
+    column-gap: 1rem;
+    font-size: 1rem;
+}
+
+.bottomRow>.profilePic{
+    height: 90px;
+}
+
+.greeting>p{
     margin: 0;
+    margin-bottom: .5rem;
 }
 
-header{
-    background-color: crimson;
-    grid-column: 2;
-    grid-row: 1;
+.greeting>.profileName{
+    font-size: 2rem;
 }
 
-aside{
-    background-color: darkturquoise;
-    grid-column: 1;
-    grid-row: 1 / -1;
-}
-
-main{
-    background-color: gray;
-    grid-column: 2;
-    grid-row: 2;
+.bottomRow>button{
+    background-color: rgb(25, 146, 212);
+    color: white;
+    font-size: larger;
+    padding: 1em 2em;
+    border-radius: 2em;
 }

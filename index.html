@@ -1,14 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>header</header>
-    <aside>sidebar</aside>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="topRow">
+        <form>
+          <button type="submit">
+            <svg><use href="icons/search.svg"></use></svg>
+          </button>
+          <input type="search" name="searchText" id="searchText" />
+        </form>
+        <svg>
+            <use href="icons/notifications.svg"></use>
+        </svg>
+        <img src="icons/account_circle.png" alt="Profile Picture" class="profilePic">
+        <span class="profileName">Morgan Oakley</span>
+      </div>
+      <div class="bottomRow">
+        <img src="icons/account_circle.png" alt="Profile Picture" class="profilePic">
+        <div class="greeting">
+            <p>Hi there,</p>
+            <span class="profileName">Morgan Oakley (@morgan)</span>
+        </div>
+        <button>New</button>
+        <button>Upload</button>
+        <button>Share</button>
+      </div>
+    </header>
+    <aside>
+      <div class="logo">
+        <a href="">
+          <svg><use href="icons/browse.svg"></use></svg>
+          <p>Dashboard</p>
+        </a>
+      </div>
+      <ul class="navigation">
+        <li>
+          <a href="">
+            <svg><use href="icons/home.svg"></use></svg>
+            <p>Home</p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <svg><use href="icons/id_card.svg"></use></svg>
+            <p>Profile</p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <svg><use href="icons/mode_comment.svg"></use></svg>
+            <p>Messages</p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <svg><use href="icons/history.svg"></use></svg>
+            <p>History</p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <svg><use href="icons/checklist.svg"></use></svg>
+            <p>Tasks</p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <svg><use href="icons/groups.svg"></use></svg>
+            <p>Communities</p>
+          </a>
+        </li>
+      </ul>
+      <ul class="aboutSection">
+        <li>
+          <a href="">
+            <svg><use href="icons/settings.svg"></use></svg>
+            <p>Settings</p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <svg><use href="icons/support_agent.svg"></use></svg>
+            <p>Support</p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <svg><use href="icons/verified_user.svg"></use></svg>
+            <p>Privacy</p>
+          </a>
+        </li>
+      </ul>
+    </aside>
     <main>main</main>
-</body>
+  </body>
 </html>
