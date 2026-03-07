@@ -49,6 +49,11 @@ aside {
   padding: 1rem;
 }
 
+section p {
+    padding: 0;
+  margin: 0;
+}
+
 svg {
   width: 24px;
   height: 24px;
@@ -102,9 +107,9 @@ form {
   width: max-content;
 }
 .topRow > * > input {
-  border-radius: 1em;
-  border-width: 1px;
-  background-color: rgb(245, 245, 245);
+  border-radius: 14px;
+  border-style: none;
+  background-color: rgb(187, 187, 187);
   padding: 0.4rem;
 }
 
@@ -121,7 +126,6 @@ form {
 }
 
 .greeting > p {
-  margin: 0;
   margin-bottom: 0.5rem;
 }
 
@@ -144,7 +148,7 @@ main {
   display: grid;
   grid-template-columns: 1fr min-content;
   grid-template-rows: 1fr 1fr;
-  padding: 40px;
+  padding: 10px 40px 40px;
 }
 
 main > section {
@@ -172,11 +176,6 @@ main > section {
   grid-row: 1;
 }
 
-.trending {
-  grid-column: -1;
-  grid-row: -1;
-}
-
 .projects > * > article {
   background-color: white;
   padding: 16px;
@@ -196,21 +195,58 @@ h2 {
   grid-template-columns: min-content;
   background-color: white;
   border-radius: 10px;
-  padding: 8px 24px;
-  
+  padding: 9px 32px 24px;
 }
 
-.announcements > * > article {
-  text-overflow: ellipsis;
-  overflow: hidden;
+.announcements > * > article > p {
   display: -webkit-box;
-  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: small;
 }
 
-.announcements > * > article>h3{
+.announcements > * > article > h3 {
   white-space: nowrap;
   padding: 0;
-  margin: 5px 0px;
+  margin: 15px 0px 5px;
   font-size: medium;
+}
+
+.announcements > * > article:not(:last-child) {
+  padding-bottom: 15px;
+  border-bottom: 2px solid lightslategray;
+}
+
+.trending {
+  grid-column: -1;
+  grid-row: -2;
+}
+
+.trending>.gridContainer {
+  display: grid;
+  background-color: white;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.trending>.gridContainer>section {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: repeat(2, min-content);
+  font-size: 14px;
+  gap: 7px;
+}
+
+
+.trending>.gridContainer>section>img {
+  width: 64px;
+  grid-column: 1;
+  grid-row: 1/-1;
+}
+
+.trending>.gridContainer>section>p:first-of-type {
+  font-weight: bold;
+  margin-top: auto;
 }
