@@ -1,6 +1,6 @@
 body {
   display: grid;
-  grid-template-columns: clamp(250px, 20vw, 350px) 1fr;
+  grid-template-columns: clamp(250px, 20vw, 300px) 1fr;
   grid-template-rows: auto 1fr;
   min-height: 100svh;
   margin: 0;
@@ -34,8 +34,9 @@ header {
   display: grid;
   grid-template-rows: repeat(2, auto);
   grid-template-columns: 1fr;
-  padding: .25rem 2rem;
+  padding: 0.25rem 2rem;
   font-weight: bold;
+  filter: drop-shadow(0px 5px 5px lightgray);
 }
 
 aside {
@@ -48,21 +49,15 @@ aside {
   padding: 1rem;
 }
 
-main {
-  background-color: gray;
-  grid-column: 2;
-  grid-row: 2;
-}
-
 svg {
   width: 24px;
   height: 24px;
   margin: auto;
 }
 
-.logo>*>svg{
-    width: 48px;
-    height: 48px;
+.logo > * > svg {
+  width: 48px;
+  height: 48px;
 }
 use {
   margin: auto;
@@ -82,63 +77,140 @@ aside > * {
   font-size: 1.5em;
 }
 
-button{
-    border: none;
-    background-color: transparent;
+button {
+  border: none;
+  background-color: transparent;
 }
 
-
-.topRow{
-    display: grid;
-    grid-template-columns:min-content 1fr repeat(3,min-content);
-    align-items: center;
-    column-gap: 1rem;
-    font-size: 1.5rem;
+.topRow {
+  display: grid;
+  grid-template-columns: min-content 1fr repeat(3, min-content);
+  align-items: center;
+  column-gap: 1rem;
+  font-size: 1.5rem;
 }
 
-form{
-    display: contents;
+form {
+  display: contents;
 }
 
-.topRow>.profilePic{
-    height: 64px;
+.topRow > .profilePic {
+  height: 64px;
 }
 
-.topRow>.profileName{
-    width: max-content;
+.topRow > .profileName {
+  width: max-content;
 }
-.topRow>*>input{
-    border-radius: 1em;
-    border-width: 1px;
-    background-color: rgb(245, 245, 245);
-    padding: .4rem;
-}
-
-.bottomRow{
-    display: grid;
-    grid-template-columns:min-content 1fr repeat(3,min-content);
-    align-items: center;
-    column-gap: 1rem;
-    font-size: 1rem;
+.topRow > * > input {
+  border-radius: 1em;
+  border-width: 1px;
+  background-color: rgb(245, 245, 245);
+  padding: 0.4rem;
 }
 
-.bottomRow>.profilePic{
-    height: 90px;
+.bottomRow {
+  display: grid;
+  grid-template-columns: min-content 1fr repeat(3, min-content);
+  align-items: center;
+  column-gap: 1rem;
+  font-size: 1rem;
 }
 
-.greeting>p{
-    margin: 0;
-    margin-bottom: .5rem;
+.bottomRow > .profilePic {
+  height: 90px;
 }
 
-.greeting>.profileName{
-    font-size: 2rem;
+.greeting > p {
+  margin: 0;
+  margin-bottom: 0.5rem;
 }
 
-.bottomRow>button{
-    background-color: rgb(25, 146, 212);
-    color: white;
-    font-size: larger;
-    padding: 1em 2em;
-    border-radius: 2em;
+.greeting > .profileName {
+  font-size: 2rem;
+}
+
+.bottomRow > button {
+  background-color: rgb(25, 146, 212);
+  color: white;
+  font-size: larger;
+  padding: 1em 2em;
+  border-radius: 2em;
+}
+
+main {
+  background-color: rgb(226, 232, 240);
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  grid-template-rows: 1fr 1fr;
+  padding: 40px;
+}
+
+main > section {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+}
+
+.gridContainer {
+  display: grid;
+}
+
+.projects {
+  grid-row: 1/-1;
+}
+
+.projects > .gridContainer {
+  grid-column: 1;
+  grid-row: 2/-1;
+  grid-template-columns: repeat(auto-fit, 400px);
+  gap: 24px;
+}
+
+.announcements {
+  grid-column: -1;
+  grid-row: 1;
+}
+
+.trending {
+  grid-column: -1;
+  grid-row: -1;
+}
+
+.projects > * > article {
+  background-color: white;
+  padding: 16px;
+  border-radius: 10px;
+  border-left: goldenrod 10px solid;
+  filter: drop-shadow(5px 5px 5px lightgray);
+}
+
+h2 {
+  grid-row: 1;
+  grid-column: 1/-1;
+  font-size: larger;
+  font-weight: normal;
+}
+
+.announcements > .gridContainer {
+  grid-template-columns: min-content;
+  background-color: white;
+  border-radius: 10px;
+  padding: 8px 24px;
+  
+}
+
+.announcements > * > article {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.announcements > * > article>h3{
+  white-space: nowrap;
+  padding: 0;
+  margin: 5px 0px;
+  font-size: medium;
 }
